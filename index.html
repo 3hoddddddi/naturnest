@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naturnest | Wholesome Baking & Healthy Recipes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #FAF8F5;
+            --accent-color: #D97757;
+            --accent-hover: #c26547;
+            --text-dark: #2C2C2C;
+            --text-light: #666666;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+            --spacing-lg: 100px;
+            --spacing-md: 60px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--primary-bg);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--text-dark);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 30px 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+        }
+
+        .nav-links a {
+            margin-left: 30px;
+            font-size: 15px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .hero {
+            padding-top: 150px;
+            padding-bottom: var(--spacing-lg);
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            min-height: 90vh;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-title {
+            font-size: 56px;
+            margin-bottom: 24px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            max-width: 90%;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 16px 36px;
+            font-size: 16px;
+            font-weight: 400;
+            border-radius: 2px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            color: #fff;
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .featured-recipes {
+            padding: var(--spacing-lg) 0;
+            background-color: #fff;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 16px;
+        }
+
+        .zig-zag-row {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 100px;
+        }
+
+        .zig-zag-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .zig-zag-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .zz-image {
+            flex: 1;
+        }
+
+        .zz-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .zz-content {
+            flex: 1;
+            padding: 0 40px;
+        }
+
+        .zz-category {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .zz-content h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .zz-content p {
+            color: var(--text-light);
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        .link-arrow {
+            font-weight: 700;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .link-arrow::after {
+            content: '\2192';
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .link-arrow:hover::after {
+            transform: translateX(5px);
+        }
+
+        .guides {
+            padding: var(--spacing-lg) 0;
+            background-color: var(--primary-bg);
+        }
+
+        .grid-asym {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .guide-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .guide-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+        }
+
+        .guide-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 2px;
+            margin-bottom: 20px;
+        }
+
+        .guide-card.large {
+            grid-column: span 2;
+        }
+
+        .guide-card.large img {
+            height: 350px;
+        }
+
+        .guide-card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .guide-card p {
+            color: var(--text-light);
+            font-size: 15px;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .newsletter {
+            padding: var(--spacing-lg) 0;
+            background-color: var(--text-dark);
+            color: #fff;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            color: #fff;
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .newsletter p {
+            color: #aaa;
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group input {
+            padding: 16px 20px;
+            width: 100%;
+            border: none;
+            border-radius: 2px;
+            font-family: var(--font-body);
+            font-size: 16px;
+        }
+
+        .form-group button {
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-body);
+        }
+
+        footer {
+            background-color: #fff;
+            padding: var(--spacing-md) 0 30px;
+            border-top: 1px solid #eaeaea;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h4 {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            color: var(--text-light);
+            max-width: 300px;
+        }
+
+        .footer-links h5 {
+            font-size: 16px;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #eaeaea;
+            color: #999;
+            font-size: 14px;
+        }
+
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 120px;
+            }
+            .hero-subtitle {
+                margin: 0 auto 40px;
+            }
+            .zig-zag-row, .zig-zag-row:nth-child(even) {
+                flex-direction: column;
+                gap: 40px;
+            }
+            .zz-content {
+                padding: 0;
+            }
+            .grid-asym {
+                grid-template-columns: 1fr;
+            }
+            .guide-card.large {
+                grid-column: span 1;
+            }
+            .guide-card.large img {
+                height: 250px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .footer-brand p {
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero-title {
+                font-size: 42px;
+            }
+            .form-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-inner">
+            <a href="#" class="logo">naturnest</a>
+            <nav class="nav-links">
+                <a href="#recipes">Recipes</a>
+                <a href="#guides">Guides</a>
+                <a href="#community">Community</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero container">
+            <div class="hero-content">
+                <h1 class="hero-title">Elevate Your Home Baking Experience</h1>
+                <p class="hero-subtitle">Discover boutique recipes, expert cooking guides, and wholesome ingredients tailored for the modern family kitchen. Embrace the art of healthy eating without compromising on taste.</p>
+                <a href="#recipes" class="btn">Explore Recipes</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1200&q=80" alt="Rustic kitchen cooking setup">
+            </div>
+        </section>
+
+        <section id="recipes" class="featured-recipes">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Editor's Top Picks</h2>
+                    <p>Curated seasonal favorites to inspire your next gathering.</p>
+                </div>
+
+                <div class="zig-zag-row">
+                    <div class="zz-image">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="Artisan sourdough bread">
+                    </div>
+                    <div class="zz-content">
+                        <span class="zz-category">Baking Fundamentals</span>
+                        <h3>Classic Artisan Sourdough</h3>
+                        <p>Master the quintessential crust and crumb. Our step-by-step guide breaks down the fermentation process, ensuring perfect results for both beginners and seasoned home bakers.</p>
+                        <a href="page1.html" class="link-arrow">Read Full Recipe</a>
+                    </div>
+                </div>
+
+                <div class="zig-zag-row">
+                    <div class="zz-image">
+                        <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=80" alt="Healthy muffin baking">
+                    </div>
+                    <div class="zz-content">
+                        <span class="zz-category">Guilt-Free Treats</span>
+                        <h3>Wholesome Morning Muffins</h3>
+                        <p>Rich, moist, and entirely wholesome. Utilizing premium flour alternatives and natural sweeteners, these morning treats provide sustained energy without the heavy sugar crash.</p>
+                        <a href="page2.html" class="link-arrow">Read Full Recipe</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="guides" class="guides">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Essential Cooking Guides</h2>
+                    <p>Techniques and ingredient highlights for the health-conscious kitchen.</p>
+                </div>
+                
+                <div class="grid-asym">
+                    <div class="guide-card large">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1000&q=80" alt="Building a healthy salad bowl">
+                        <h3>Building the Perfect Macro Bowl</h3>
+                        <p>Learn the precise ratios of complex carbohydrates, lean proteins, and healthy fats to create balanced, visually stunning meals every day of the week.</p>
+                        <a href="page3.html" class="link-arrow">Learn More</a>
+                    </div>
+                    
+                    <div class="guide-card">
+                        <img src="https://images.unsplash.com/photo-1505253758473-96b7015fcd40?auto=format&fit=crop&w=800&q=80" alt="Spices and pantry essentials">
+                        <h3>Pantry Essentials</h3>
+                        <p>A comprehensive checklist of organic spices, grains, and oils necessary for spontaneous, healthy cooking.</p>
+                        <a href="page4.html" class="link-arrow">Learn More</a>
+                    </div>
+
+                    <div class="guide-card">
+                        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&q=80" alt="Meal prep strategy">
+                        <h3>Meal Prep Strategies</h3>
+                        <p>Save time without sacrificing nutrition. Discover our Sunday prep routine designed for busy professionals.</p>
+                        <a href="page5.html" class="link-arrow">Learn More</a>
+                    </div>
+
+                    <div class="guide-card large">
+                        <img src="https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?auto=format&fit=crop&w=1000&q=80" alt="Advanced baking techniques">
+                        <h3>Advanced Baking Flour Substitutions</h3>
+                        <p>Navigate the complex world of gluten-free baking. We break down the exact ratios for substituting almond, coconut, and oat flours in traditional family recipes to maintain the perfect texture.</p>
+                        <a href="page6.html" class="link-arrow">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="community" class="newsletter">
+            <div class="container">
+                <h2>Join the Naturnest Table</h2>
+                <p>Receive exclusive weekly recipes and seasonal baking tips directly to your inbox.</p>
+                <form class="form-group" action="#community">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>naturnest</h4>
+                    <p>Dedicated to helping North American families rediscover the joy of wholesome cooking and artisanal baking.</p>
+                </div>
+                <div class="footer-links">
+                    <h5>Discover</h5>
+                    <ul>
+                        <li><a href="#recipes">Latest Recipes</a></li>
+                        <li><a href="#guides">Kitchen Guides</a></li>
+                        <li><a href="#community">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Naturnest. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
