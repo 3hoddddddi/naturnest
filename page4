@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantry Essentials | Naturnest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-bg: #FAF8F5;
+            --accent-color: #D97757;
+            --text-dark: #2C2C2C;
+            --text-light: #666666;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Lato', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-body); background-color: var(--primary-bg); color: var(--text-dark); line-height: 1.8; padding-top: 60px; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+        .logo-wrap { text-align: center; margin-bottom: 60px; }
+        .logo { font-family: var(--font-heading); font-size: 28px; font-weight: 700; text-decoration: none; color: var(--text-dark); letter-spacing: 1px; }
+        
+        .article-header { text-align: center; margin-bottom: 50px; }
+        .article-category { display: block; font-size: 13px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-color); margin-bottom: 15px; font-weight: 700; }
+        .article-header h1 { font-family: var(--font-heading); font-size: 48px; margin-bottom: 20px; line-height: 1.2; }
+        .hero-img { width: 100%; height: 450px; object-fit: cover; border-radius: 4px; margin-bottom: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        
+        .article-content h2 { font-family: var(--font-heading); font-size: 28px; margin-top: 50px; margin-bottom: 20px; color: var(--text-dark); }
+        .article-content p { margin-bottom: 25px; color: #444; font-size: 17px; }
+        
+        .back-link { display: block; text-align: center; margin: 80px 0 60px; font-weight: 700; text-decoration: none; color: var(--accent-color); text-transform: uppercase; letter-spacing: 1px; }
+        .back-link:hover { opacity: 0.8; }
+
+        @media (max-width: 768px) {
+            .article-header h1 { font-size: 36px; }
+            .hero-img { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-wrap">
+            <a href="index.html" class="logo">naturnest</a>
+        </div>
+
+        <div class="article-header">
+            <span class="article-category">Essential Guides</span>
+            <h1>Pantry Essentials</h1>
+        </div>
+
+        <img class="hero-img" src="https://images.unsplash.com/photo-1505253758473-96b7015fcd40?auto=format&fit=crop&w=1200&q=80" alt="Spices and pantry essentials">
+
+        <div class="article-content">
+            <h2>Whole Grains and Ancient Varieties</h2>
+            <p>A well-stocked pantry is the ultimate secret weapon for consistent, stress-free healthy cooking. Keeping containers of unprocessed carbohydrates like organic rolled oats, farro, brown jasmine rice, and pre-washed quinoa ensures you always have an emergency foundation ready. These items store perfectly for months and serve as excellent canvases for a multitude of flavor directions.</p>
+            
+            <h2>Organic Spices and Flavor Enhancers</h2>
+            <p>Eating healthy shouldn't feel restrictive or uninspired. By gathering high-quality, whole organic spices like ground turmeric, cumin, smoked paprika, sea salt flakes, and black peppercorns, you can shift simple raw ingredients into extraordinary gourmet creations. Spices also introduce valuable antioxidants into your family meals without adding sodium or preservatives.</p>
+
+            <h2>Cold-Pressed Cooking Oils</h2>
+            <p>The fats sitting in your cupboards dictate the underlying health value of every meal you prepare. Ditch highly processed seed oils and anchor your cooking space with premium, cold-pressed alternatives. Keep extra virgin olive oil on hand for cold dressings and low-heat cooking, and utilize avocado oil for high-heat roasting or searing due to its excellent smoke point profile.</p>
+        </div>
+
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
+    </div>
+</body>
+</html>
